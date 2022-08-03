@@ -1,26 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ComponentsType from "./pages/componentsPage/index";
+import UseRefTypes from "./pages/hooksPage/useRef";
+import UseStateTypes from "./pages/hooksPage/useState";
 
-function App() {
+const App: React.FC = () => {
+  const carProp = { name: "shelby", price: 1000, topSpeed: 1000 };
+  const favMoviesProp = ["titanic", "fight club", "fast and furious"];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <UseStateTypes />
+      <UseRefTypes />
+      <ComponentsType car={carProp} favoriteMovies={favMoviesProp} />
     </div>
   );
-}
-
+};
 export default App;
